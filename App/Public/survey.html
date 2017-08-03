@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Product Landing Page</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/survey.css" media="screen"/>
+
+
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+      <a class="navbar-brand" href="">Guided Questionnaire</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Contact</a></li>
+        <li class="dropdown">
+          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="" data-target="#">Option 1</a></li>
+            <li><a href="" data-target="#">Option 2</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!--/.nav-collapse -->
+  </div>
+</nav>
+<!-- Begin page content -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3" id="left-info">Qs <span class="badge js-n">0</span></div>
+    <div class="col-xs-6" id="center-info">We can display current information about the questionnaire here.</div>
+    <div class="col-xs-3" id="right-info">$ <span>-</span></div>
+  </div>
+  <!-- Welcome Question -->
+  <div class="question" id="start" data-q="Welcome">
+    <div class="page-header">
+      <h1>Welcome</h1>
+    </div>
+    <p class="lead">
+      This is the landing page and/or first question of the questionnaire. A brief description of the goals and rules of this survey is recommended. This first question will fork into two different lists of questions.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-6 choice-box">
+          <a class="choice btn btn-success js-choice" role="btn" href="#p1q1" data-choice="Path one" data-price="100">Path one</a>
+        </div>
+        <div class="col-sm-6 choice-box">
+          <a class="choice btn btn-danger js-choice" role="btn" href="#p2q1"  data-choice="Path two" data-price="200">Path two</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 1 Question 1 -->
+  <div class="question" id="p1q1" data-q="Path one">
+    <div class="page-header">
+      <h1 class="text-success">Path one</h1>
+    </div>
+    <p class="lead">
+      This is the next question on path one. It's possible to fork as many times as desired. Here we have three options. The first two lead to the same place, but the third connects with a path from path two.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-4 choice-box">
+          <a class="choice btn btn-success js-choice" role="btn" href="#p1q2"  data-choice="1st option" data-price="200">1<sup>st</sup> option</a>
+        </div>
+        <div class="col-sm-4 choice-box">
+          <a class="choice btn btn-success js-choice" role="btn" href="#p1q2" data-choice="2nd option" data-price="200">2<sup>nd</sup> option</a>
+        </div>
+        <div class="col-sm-4 choice-box">
+          <a class="choice btn btn-warning js-choice" role="btn" href="#p3q2" data-choice="3rd option" data-price="300">3<sup>rd</sup> option</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 1 Question 2 -->
+  <div class="question" id="p1q2" data-q="Slider">
+    <div class="page-header">
+      <h1 class="text-success">Input types</h1>
+    </div>
+    <p class="lead">
+      It is possible to have different kinds of inputs. Here we have a movable slider. We can use the value of the slider to control where the questionnaire goes next, but we haven't included that functionality here (or have we &#128521;).
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-8 choice-box">
+          <div class="choice" id="slider"></div>
+          <p>Current value: <span id="sliderValue">50</span></p>
+        </div>
+        <div class="col-sm-4 choice-box">
+          <a id="sliderNext" class="choice btn btn-success js-choice" role="btn" href="#p1q3" data-alt-href="#p1secret" data-choice="50" data-price="50">Next</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 1 Secret -->
+  <div class="question" id="p1secret" data-q="Hitchhiker's Guide">
+    <div class="page-header">
+      <h1 class="text-primary">Secret</h1>
+    </div>
+    <p class="lead">
+      What is the answer to the Ultimate Question of Life, The Universe, and Everything?
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-12 choice-box">
+          <a class="choice btn btn-primary js-choice" role="btn" href="#p1q3" data-choice="42" data-price="10000">42</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 1 Question 3 -->
+  <div class="question" id="p1q3" data-q="Input potpourri">
+    <div class="page-header">
+      <h1>More input types</h1>
+    </div>
+    <p class="lead">
+      We can have lots of different input types from <a href="https://getbootstrap.com/components/#input-groups">Bootstrap</a>, <a href="https://jqueryui.com/">jQuery UI</a>, or a number of <a href="https://en.wikipedia.org/wiki/List_of_JavaScript_libraries#GUI-related_.28widget.29">other libraries</a>.
+      Here are just a few examples.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-md-4 choice-box">
+            <div class="btn-group choice">
+              <button type="button" class="btn btn-default dropdown-toggle js-choice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="#end" class="js-choice" data-choice="Dropdown > Action" data-price="100">Action</a></li>
+                <li><a href="#end" class="js-choice" data-choice="Dropdown > Another action" data-price="200">Another action</a></li>
+                <li><a href="#end" class="js-choice" data-choice="Dropdown > Something else here" data-price="300">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#end" class="js-choice" data-choice="Dropdown > Separated link" data-price="50">Separated link</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 choice-box">
+            <div class="btn-group choice">
+              <a role="button" class="btn btn-default js-choice" href="#end" data-choice="Split dropdown" data-price="150">Split dropdown</a>
+              <button type="button" class="btn btn-default dropdown-toggle js-choice" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+              <ul class="dropdown-menu">
+                <li><a href="#end" class="js-choice" data-choice="Split dropdown > Action" data-price="175">Action</a></li>
+                <li><a href="#end" class="js-choice" data-choice="Split dropdown > Another action" data-price="200">Another action</a></li>
+                <li class="disabled"><a>Disabled action</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 choice-box">
+            <div class="btn-group dropup choice">
+              <a role="button" class="btn btn-default js-choice" href="#end" data-choice="Dropup" data-price="500">Dropup</a>
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+              <ul class="dropdown-menu">
+                <li><a href="#end" class="js-choice" data-choice="Dropup > Action" data-price="600">Action</a></li>
+                <li><a href="#end" class="js-choice" data-choice="Dropup > Another action" data-price="700">Another action</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 choice-box">
+            <div class="input-group choice">
+              <input type="text" class="form-control text-right js-choice-extra" placeholder="Email" data-choice-extra="Email input" aria-describedby="basic-addon2">
+              <span class="input-group-addon" id="basic-addon2">@example.com</span>
+            </div>
+          </div>
+          <div class="col-md-6 choice-box">
+            <div class="input-group choice">
+              <span class="input-group-addon">&euro;</span>
+              <input type="text" class="form-control text-right js-choice-extra" aria-label="Amount (to the nearest euro)" data-choice-extra="Euro input" placeholder="500">
+              <span class="input-group-addon">.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 2 Question 1 -->
+  <div class="question" id="p2q1" data-q="Path two">
+    <div class="page-header">
+      <h1 class="text-danger">Path two</h1>
+    </div>
+    <p class="lead">
+      This is path two. One of the choices below connects with a choice from path one. The other doesn't. Try both.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-6 choice-box">
+          <a class="choice btn btn-warning js-choice" role="btn" href="#p3q2" data-choice="Connected" data-price="250">Connects</a>
+        </div>
+        <div class="col-sm-6 choice-box">
+          <a class="choice btn btn-danger js-choice" role="btn" href="#p2q2" data-choice="Did not connect" data-price="350">Doesn't connect</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 3 Question 2 -->
+  <div class="question" id="p3q2" data-q="Contextual aides">
+    <div class="page-header">
+      <h1 class="text-warning">Contextual Aides</h1>
+    </div>
+    <p class="lead">
+      If we think that users might need context-specific guidance during the questionnarie, we have a variety of aides to choose from: tooltips, popovers, modals, and alerts. Check out each one before moving on.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="row">
+          <div class="col-sm-6 choice-box">
+            <button type="button" class="choice btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltips are helpful on hover">Tooltip</button>
+          </div>
+          <div class="col-sm-6 choice-box">
+            <button type="button" class="choice btn btn-default" data-toggle="popover" title="Popover title" data-content="Popovers fire on click and are basically fancier tooltips." data-placement="top">Popover</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 choice-box">
+            <button id="fire-alert" class="choice btn btn-default" role="btn">Alert</button>
+          </div>
+          <div class="col-sm-6 choice-box">
+            <button type="button" class="choice btn btn-default" data-toggle="modal" data-target="#modal-demo">Modal</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 choice-box">
+            <a class="choice btn btn-primary js-choice" role="btn" href="#end" data-choice="Moving on" data-price="1000">Moving on</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 2 Question 2 -->
+  <div class="question" id="p2q2" data-q="Table of Elements">
+    <div class="page-header">
+      <h1>Responsive Web Design</h1>
+    </div>
+    <p class="lead">
+      These questions are web responsive, so they look good on any device or screen size. Trying resizing the window or open this questionnaire on different devices to see this in action.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-orchid js-choice" role="btn" href="#p2q3" data-choice="H" data-price="1">H</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-other js-choice" role="btn" href="#p2q3" data-choice="He" data-price="2">He</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-alt js-choice" role="btn" href="#p2q3" data-choice="Li" data-price="4">Li</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-orange js-choice" role="btn" href="#p2q3" data-choice="Be" data-price="8">Be</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-yellow js-choice" role="btn" href="#p2q3" data-choice="B" data-price="16">B</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-danger js-choice" role="btn" href="#p2q3" data-choice="C" data-price="32">C</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-warning js-choice" role="btn" href="#p2q3" data-choice="N" data-price="64">N</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-primary js-choice" role="btn" href="#p2q3" data-choice="O" data-price="128">O</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-info js-choice" role="btn" href="#p2q3" data-choice="F" data-price="256">F</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-success js-choice" role="btn" href="#p2q3" data-choice="Ne" data-price="512">Ne</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-default js-choice" role="btn" href="#p2q3" data-choice="Na" data-price="1024">Na</a>
+        </div>
+        <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6 choice-box">
+          <a class="choice btn btn-link js-choice" role="btn" href="#p2q3" data-choice="Mg" data-price="2048">Mg</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Path 2 Question 3 -->
+  <div class="question" id="p2q3" data-q="Bugs">
+    <div class="row top-buffer">
+      <div class="col-xs-6">
+        <div class="jumbotron">
+          <h1>Design</h1>
+          <p>
+            There are lots of different components from <a href="https://getbootstrap.com/">Bootstrap</a> that are very easy to incorporate into the design of each question. No two questions have to look the same.
+          </p>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Options</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-6 choice-box">
+                <a class="choice btn btn-default js-choice" role="btn" href="#end" data-choice="Cicada" data-price="100">Cicada</a>
+              </div>
+              <div class="col-sm-6 choice-box">
+                <a class="choice btn btn-info js-choice" role="btn" href="#end" data-choice="Dragonfly" data-price="200">Dragonfly</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 choice-box">
+                <a class="choice btn btn-primary js-choice" role="btn" href="#end" data-choice="Bumblebee" data-price="300">Bumblebee</a>
+              </div>
+              <div class="col-sm-6 choice-box">
+                <a class="choice btn btn-success js-choice" role="btn" href="#end" data-choice="Cricket" data-price="200">Cricket</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="well">
+          Check out these cool illustrations of bugs!
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="http://publicdomainvectors.org/en/free-clipart/Cicada-silhouette/48537.html" class="thumbnail">
+              <img src="http://publicdomainvectors.org/photos/papapishu-cicada.png" alt="Cicada">
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a href="http://publicdomainvectors.org/en/free-clipart/Dragonfly-illustration/48474.html" class="thumbnail">
+              <img src="http://publicdomainvectors.org/photos/1425842931.png" alt="Dragonfly">
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <a href="http://publicdomainvectors.org/en/free-clipart/Bumblebee/48505.html" class="thumbnail">
+              <img src="http://publicdomainvectors.org/photos/papapishu-Bumblebee.png" alt="Bumblebee">
+            </a>
+          </div>
+          <div class="col-sm-6">
+            <a href="http://publicdomainvectors.org/en/free-clipart/Cricket-image/48531.html" class="thumbnail">
+              <img src="http://publicdomainvectors.org/photos/Cricket-.png" alt="Cricket">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Last question -->
+  <div class="question" id="end" data-q="Enjoy">
+    <div class="page-header">
+      <h1>Did you enjoy this questionnaire?</h1>
+    </div>
+    <p class="lead">
+      One last question before we wrap-up and look at the results of this survey. Please answer honestly.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-6 choice-box">
+          <a class="choice btn btn-success js-choice" role="btn" href="#results" data-choice="Of course!" data-price="0.01">Yes</a>
+        </div>
+        <div class="col-sm-6 choice-box">
+          <button class="choice btn btn-danger disabled" role="btn">No</button>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+  <!-- Wrap-up Screen -->
+  <div id="results" class="results">
+    <div class="page-header">
+      <h1>Results of your questionnaire</h1>
+    </div>
+    <h2 class="text-center">Based on your answers the price of something is</h2>
+    <div class="well well-lg text-center text-success"><h1>$<span id="total-price"></span></h1></div>
+    <div id="price-detail-collapsed" class="collapse">
+       <ul id="price-detail">
+       </ul>
+       <em class="text-muted">Note: Clicking "Change" requires you to restart the questionnaire from that point.</em><br/><br/>
+    </div>
+    <a id="price-detail-more" class="text-muted" href="#price-detail-collapsed" data-toggle="collapse">Show detail...</a>
+    <br/>
+    <br/>
+    <p>
+      We can use this part to say anything else we want to say about the results or the questionnaire. Also, you can click below to start again. There is at least one secret in this questionnaire, so if you didn't find it, I recommend beginning again.
+    </p>
+    <div class="row top-buffer">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <div class="col-sm-12 choice-box">
+          <a id="redo" class="choice btn btn-default" role="btn" href="#start">Start again</a>
+        </div>
+      </div>
+      <div class="col-xs-2"></div>
+    </div>
+  </div>
+  <!-- End of question -->
+</div>
+<!-- /div for container -->
+<footer class="footer">
+  <span>Created by <a href="https://twitter.com/rdimartino">@rdimartino</a> &copy; 2016 - Play with the <a href="https://codepen.io/rdimartino/pen/gwpVLy">CodePen</a></span>
+</footer>
+<!-- Alert-->
+<div class="row alert-row">
+  <div class="col-xs-2"></div>
+  <div id="alert_holder" class="col-xs-8"></div>
+  <div class="col-xs-2"></div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modal-demo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        Modals are sort of like advanced alerts. We can put lots of messaging or interactivity in here. Like buttons!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Also close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  // If URL has no fragment, send user to #start
+if (!window.location.hash) {
+  window.location.hash = 'start';
+}
+
+//// Data controller for answers and questions
+var stack = []; //Stack of questions
+
+$("#redo").on("click", function() {
+  stack = [];
+  $("input").val("");
+  $("#right-info > span").text("-");
+});
+
+// Storing question and answering into the stack
+$(".js-choice").on("click", function() {
+  question = $(":target");
+  hash = "#"+question.attr("id");
+  q = question.data("q");
+  choice = $(this).data("choice");
+  price = Number($(this).data("price"));
+  extra = $(":target .js-choice-extra").map(function() {
+    var dict = {};
+    dict[$(this).data("choice-extra")]=$(this).val();
+    return dict;})
+    .toArray();
+  i = stack.map(function(e) {return e['hash'];}).indexOf(hash);
+  stack[i]['q']=q;
+  stack[i]['choice']=choice;
+  stack[i]['price']=price;
+  stack[i]['extra']=extra;
+  $("#price-detail").html("");
+  $.each(stack, function(index, value) {
+    $("<li />", {
+      "html": q2t(value)
+    }).appendTo("#price-detail");
+  });  
+});
+
+//Parse response
+function q2t(value) {
+  return "<strong>"+value['q']+"?</strong><br/>"+value['choice']+" - $"+value['price']+(value['extra'].length == 0 ? "" : "<br/>Additional info: "+e2t(value['extra']))+"<br/><a class=\"js-change\" href=\""+value['hash']+"\">Change</a> ";
+}
+//Extra function to parse extras
+function e2t(extra) {
+  var str = "";
+  for (var i=0;i<extra.length;i++) {
+    key = Object.keys(extra[i]);
+    str += "<em>"+key+"</em> = \""+extra[i][key]+"\"; ";
+  }
+  return str;
+}
+
+// Window listener to add questions to the stack
+window.addEventListener('popstate', function(event)
+{
+  hash = window.location.hash
+  if (stack.map(function(e) {return e['hash']}).indexOf(hash)!=-1)
+      // && stack.map(function(e) {return e['hash'];}).indexOf(hash) == stack.length - 2) 
+  {
+    // stack.pop();
+    stack = stack.slice(0,stack.map(function(e) {return e['hash']}).indexOf(hash));
+  } 
+  // else {
+    stack.push({'n':(typeof stack[stack.length-1] != 'undefined') ? stack[stack.length-1]['n']+1 : 0
+               ,'hash':hash});
+  // }
+  console.log(stack);
+  if ($(hash).hasClass("question")) {
+    $(".js-n").text(stack[stack.length-1]['n']);
+  }
+  totalPrice = stack.map(function(e) {return e['price'] ? e['price']:0;}).reduce( (p, c) => p+c)
+  $("#right-info > span").text(totalPrice);
+  $("#total-price").text(totalPrice);
+});
+
+// Show price detail
+$("#price-detail-more").on("click", (function(event) {
+    var count = 0;
+    var txt = "Hide detail";
+
+    return function(e) {
+        count++;
+        if (count == 2) {
+            txt = "Show detail again...";
+            count = 0;
+        } else {
+            txt = "Hide detail";
+        };
+        $(this).blur();
+        $(this).text(txt);
+    };
+})());
+
+// Slider control
+$(function() {
+  var currentValue = $('#sliderValue');
+  var sliderNext = $('#sliderNext');
+  var origLink = sliderNext.attr("href");
+  var altLink = sliderNext.data("alt-href");
+
+  $("#slider").slider({
+    max: 100,
+    min: 0,
+    value: 50,
+    slide: function(event, ui) {
+      currentValue.html(ui.value);
+      sliderNext.data("choice", ui.value);
+      if (ui.value == 42) {
+        sliderNext.attr("href", altLink);
+        currentValue.addClass("text-primary");
+        currentValue.css("font-weight", "bold");
+      } else if (sliderNext.attr("href") != origLink) {
+        sliderNext.attr("href", origLink);
+        currentValue.removeClass("text-primary");
+        currentValue.css("font-weight", "");
+      }
+    }
+  });
+});
+
+// Enable boostrap features
+$(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+$(function() {
+  $('[data-toggle="popover"]').popover();
+});
+
+// Bootstrap alert
+$("#fire-alert").on("click", function() {
+  $("#alert_holder").append(
+    `
+<div class="alert alert-warning fade in">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  <strong>Alert:</strong> These are great for sending feedback messages.
+</div>
+`
+  );
+  alertTimeout(5000);
+});
+function alertTimeout(wait) {
+  setTimeout(function() {
+    $('#alert_holder').children('.alert:first-child').remove();
+  }, wait);
+};
+</script>
+</body>
+</html>
